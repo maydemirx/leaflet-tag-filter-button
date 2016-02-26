@@ -1,7 +1,7 @@
 {
   "name": "leaflet-tag-filter-button",
   "version": "0.0.1",
-  "description": "Adds filtering tags for marker to LeafLet",
+  "description": "Adds tag filter control for marker to LeafLet",
   "repository": {
     "type": "git",
     "url": "git@github.com:maydemirx/leaflet-tag-filter-button.git"
