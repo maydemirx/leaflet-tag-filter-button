@@ -21,7 +21,8 @@
     "filter"
   ],
   "dependencies": {
-    "leaflet": "*"
+    "leaflet": "*",
+    "leaflet-easybutton": "*"
   },
   "devDependencies": {
     "grunt": "~0.4.2",

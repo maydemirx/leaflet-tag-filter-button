@@ -1,6 +1,7 @@
 # Leaflet Tag Filter Button
 Adds tag filter control for marker to LeafLet
 
+Required [Leaflet.EasyButton](https://github.com/CliffCloud/Leaflet.EasyButton)
 
 Check out the [demo](https://leaflet-tag-filter-button.herokuapp.com)
 
