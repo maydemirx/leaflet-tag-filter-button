@@ -16,7 +16,7 @@
         _easyButton: null,
         _tagEl: null,
         _selectedTags: [],
-        _removedMarkers: [],
+        _invisibles: [],
 
         _preparePopup: function(data) {
             for (var i = 0; i < data.length; i++) {
@@ -110,16 +110,23 @@
                 }
             }
 
-            for (i = 0; i < this._removedMarkers.length; i++) {
-                for (j = 0; j < this._removedMarkers[i].options.tags.length; j++) {
-                    if (this._selectedTags.length == 0 || this._selectedTags.indexOf(this._removedMarkers[i].options.tags[j]) !== -1) {
-                        this._map.addLayer(this._removedMarkers[i]);
+            var toBeRemovedFromInvisibles = [];
+
+            for (i = 0; i < this._invisibles.length; i++) {
+                for (j = 0; j < this._invisibles[i].options.tags.length; j++) {
+                    if (this._selectedTags.length == 0 || this._selectedTags.indexOf(this._invisibles[i].options.tags[j]) !== -1) {
+                        this._map.addLayer(this._invisibles[i]);
+                        toBeRemovedFromInvisibles.push(i);
                         break;
                     }
                 }
             }
 
-            this._removedMarkers = [];
+            while(toBeRemovedFromInvisibles.length > 0) {
+                this._invisibles.splice(toBeRemovedFromInvisibles.pop(), 1);
+            }
+
+            var removedMarkers = [];
 
             if (this._selectedTags.length > 0) {
                 this._map.eachLayer(function(layer) {
@@ -129,13 +136,14 @@
                             found = this._selectedTags.indexOf(layer.options.tags[i]) !== -1;
                         }
                         if (!found) {
-                            this._removedMarkers.push(layer);
+                            removedMarkers.push(layer);
                         }
                     }
                 }.bind(this));
 
-                for (i = 0; i < this._removedMarkers.length; i++) {
-                    this._map.removeLayer(this._removedMarkers[i]);
+                for (i = 0; i < removedMarkers.length; i++) {
+                    this._map.removeLayer(removedMarkers[i]);
+                    this._invisibles.push(removedMarkers[i]);
                 }
             }
 
