@@ -112,7 +112,7 @@
 
             for (i = 0; i < this._removedMarkers.length; i++) {
                 for (j = 0; j < this._removedMarkers[i].options.tags.length; j++) {
-                    if (this._selectedTags.length == 0 || this._selectedTags.indexOf(this._removedMarkers[j].options.tags[i]) !== -1) {
+                    if (this._selectedTags.length == 0 || this._selectedTags.indexOf(this._removedMarkers[i].options.tags[j]) !== -1) {
                         this._map.addLayer(this._removedMarkers[i]);
                         break;
                     }
