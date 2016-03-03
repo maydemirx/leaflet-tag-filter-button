@@ -16,7 +16,8 @@
 .leaflet-bar .tag-filter-tags-container a {
     width: 100%;
     text-align: right;
-    padding-right: 5px;
+    right: 5px;
+    position: relative;
 }
 
 .leaflet-bar .tag-filter-tags-container div {
