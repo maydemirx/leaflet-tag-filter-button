@@ -134,6 +134,9 @@
                         var found = false;
                         for (var i = 0; i < layer.options.tags.length; i++) {
                             found = this._selectedTags.indexOf(layer.options.tags[i]) !== -1;
+                            if (found) {
+                                break;
+                            }
                         }
                         if (!found) {
                             removedMarkers.push(layer);
