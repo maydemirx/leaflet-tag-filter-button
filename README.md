@@ -10,7 +10,7 @@ Usage
 
 Simple usage :
 
-If your markers contains tags option the plugin filter markers by selected tags when popup is closed
+If your markers contains tags option the plugin filters them by selected tags when popup is closed
 For example:
 
 ```
@@ -30,6 +30,7 @@ L.tagFilterButton({
 
 Set data from external url/ajax :
 
+*note: this option not implemented yet!*
 
 ```
 
