@@ -10,7 +10,7 @@ Usage
 
 Simple usage :
 
-If you want to auto filter when filter popup is closed. Your markers must be contain tags option.
+If your markers contains tags option the plugin filter markers by selected tags when popup is closed
 For example:
 
 ```
