@@ -74,33 +74,22 @@ API Docs
 
 ### Options
 
- - **icon**
-> Buton icon default is fa-filter. You can use html syntax for the icon for example `<img src="/filter.png">`
-
- - **onSelectionComplete**
- > The callback function for selected tags. It fires when popup is closed and sends selected tags to the callback function as a parameter.
- 
- - **data**
- > The data to be used for tags popup, it can be array or function
-
- - **clearText**
- > The text of the clear button. Default is "clear".
+Option                 | Type          | Default              | Description
+-----------------------|---------------|----------------------|----------------------------
+`icon`               | `String\|HTML`  | `fa-filter`          | Buton icon default is fa-filter. You can use html syntax for the icon for example `<img src="/filter.png">`
+`onSelectionComplete`               | `Function`  | `null`    | The callback function for selected tags. It fires when popup is closed and sends selected tags to the callback function as a parameter.
+`data`               | `Array\|Function`  | `null`    | The data to be used for tags popup, it can be array or function
+`clearText`               | `String`  | `clear`    | The text of the clear button
 
 ### Methods
 
- - **update**
-> Update markers with last selected tags.
- 
- - **hasFiltered**
- > returns true if any tag(s) selected otherwise false
+Method                          | Returns		| Description
+--------------------------------|---------------|----------------------------
+`update()`                      | `void`			| Update markers with last selected tags.
+`hasFiltered()`                 | `Boolean`		| returns true if any tag(s) selected otherwise false.
+`registerCustomSource(<`[`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)`> source`) | `throw and exception if @source has no name or item key`		| Register @source object for filtering markers by tags. If you wanto to use this function you must implement @hide function  
+`enablePruneCluster(<`[`PruneCluster`](https://github.com/SINTEF-9012/PruneCluster)`> pruneClusterInstance`) | `throw and exception if @source has no name or item key`		| Register @source object for filtering markers by tags. If you wanto to use this function you must implement @hide function  
 
- - **registerCustomSource**
- > Register @source object for filtering markers by tags. If you wanto to use this function you must implement @hide function  
- > - **@param source** reference of the new marker source. It must have name and source item
-
- - **enablePruneCluster**
- > Enable prune-cluster layer source. If you call this function the plugin search on prune-cluster instance for filtering. 
- > - **@param pruneClusterInstance** reference of the prune-cluster instance
 
 ----------
 
