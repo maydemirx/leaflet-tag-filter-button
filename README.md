@@ -66,6 +66,55 @@ L.tagFilterButton({
 ```
 
 
+----------
+
+
+API Docs
+------
+
+### Options
+
+ - **icon**
+> Buton icon default is fa-filter. You can use html syntax for the icon for example `<img src="/filter.png">`
+
+ - **onSelectionComplete**
+ > The callback function for selected tags. It fires when popup is closed and sends selected tags to the callback function as a parameter.
+ 
+ - **data**
+ > The data to be used for tags popup, it can be array or function
+
+ - **clearText**
+ > The text of the clear button. Default is "clear".
+
+### Methods
+
+ - **update**
+> Update markers with last selected tags.
+ 
+ - **hasFiltered**
+ > returns true if any tag(s) selected otherwise false
+
+ - **registerCustomSource**
+ > Register @source object for filtering markers by tags. If you wanto to use this function you must implement @hide function  
+ > - **@param source** reference of the new marker source. It must have name and source item
+
+ - **enablePruneCluster**
+ > Enable prune-cluster layer source. If you call this function the plugin search on prune-cluster instance for filtering. 
+ > - **@param pruneClusterInstance** reference of the prune-cluster instance
+
+----------
+
+Change Log
+-----
+
+**v0.0.2 (30.06.2016)**
+
+ - Added multi layer source support. 
+ > You can add a new marker container layer source to plugin and the plugin searching on added source.
+ 
+ - Added [PruneCluster](https://github.com/SINTEF-9012/PruneCluster) support.
+ > Added [PruneCluster](https://github.com/SINTEF-9012/PruneCluster)  layer source to the plugin as default. You can enable it by enablePruneCluster function.
+
 Authors
 -------
 
