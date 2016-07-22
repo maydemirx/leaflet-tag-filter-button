@@ -302,12 +302,8 @@
             this._easyButton = L.easyButton(this.options.icon, this._showTagFilterPopup.bind(this)).addTo(map);
             this._container = L.DomUtil.create('div', 'tag-filter-tags-container', this._easyButton._container);
 
-            this._filterInfo = L.DomUtil.create('span', 'label bg-dark-cold-grey', this._easyButton._container);
-            this._filterInfo.style.position = "absolute";
-            this._filterInfo.style.marginTop = "-5px";
-            this._filterInfo.style.marginLeft = "-5px";
-            this._filterInfo.style.color = "white";
-            this._filterInfo.style.fontSize = "12px";
+            this._filterInfo = L.DomUtil.create('span', 'filter-info-box', this._easyButton._container);
+            this._showFilterInfo(0);
 
             this._tagEl = L.DomUtil.create('ul', '', this._container);
             this._map.on('dragstart click', this.hide, this);
