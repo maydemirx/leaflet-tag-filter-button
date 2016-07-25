@@ -21,7 +21,7 @@ var fastMarker = L.marker([50.5, 30.5], { tags: ['fast'] }).addTo(map);
 var slowMarker = L.marker([50.5, 30.5], { tags: ['slow'] }).addTo(map);
 var bothMarker = L.marker([50.5, 30.5], { tags: ['fast', 'slow'] }).addTo(map);
 
-L.tagFilterButton({
+L.control.tagFilterButton({
 	data: ['fast', 'slow']
 }).addTo( map );
 
