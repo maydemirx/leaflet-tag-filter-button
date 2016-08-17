@@ -22,6 +22,20 @@
         // GLOBAL FUNCTIONS
 
         /**
+         * @function: resetCaches
+         * Resets marker caches
+         * @param update: if send as true, the @update function is called after cleaning the cache
+         * */
+        resetCaches: function(update) {
+            if (typeof update !== 'boolean')
+                update = true;
+            this._invisibles = [];
+            if (update) {
+                this.update();
+            }
+        },
+
+        /**
          * @function: update
          * Update markers by last selected tags
          *
