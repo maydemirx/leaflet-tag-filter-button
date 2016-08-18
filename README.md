@@ -87,8 +87,9 @@ Method                          | Returns		| Description
 --------------------------------|---------------|----------------------------
 `update()`                      | `void`			| Update markers with last selected tags.
 `hasFiltered()`                 | `Boolean`		| returns true if any tag(s) selected otherwise false.
-`registerCustomSource(<`[`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)`> source`) | `throws an exception if @source has no name or @source.hide function is not implemented`		| Register @source object for filtering markers by tags. If you wanto to use this function you must implement @hide function  
-`enablePruneCluster(<`[`PruneCluster`](https://github.com/SINTEF-9012/PruneCluster)`> pruneClusterInstance`) | `throws an exception if @source has no name or @source.hide function is not implemented`		| Register @source object for filtering markers by tags. If you wanto to use this function you must implement @hide function  
+`registerCustomSource(<`[`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)`> source`) | `throws an exception if `source` has no name or `source.hide` function is not implemented`		| Register `source` object for filtering markers by tags. If you wanto to use this function you must implement `hide` function  
+`enablePruneCluster(<`[`PruneCluster`](https://github.com/SINTEF-9012/PruneCluster)`> pruneClusterInstance`) | `void`	| Searches markers on given `pruneClusterInstance` for filtering
+`resetCaches(<`[`Boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)`> update?`) | `void` | Resets internal caches. `update` parameter if sent as true, the `update()` function is called after cleaning the cache.
 
 
 ----------
@@ -103,6 +104,11 @@ Change Log
  
  - Added [PruneCluster](https://github.com/SINTEF-9012/PruneCluster) support.
  > Added [PruneCluster](https://github.com/SINTEF-9012/PruneCluster)  layer source to the plugin as default. You can enable it by enablePruneCluster function.
+
+**v0.0.3 (18.08.2016)**
+- Moved css of filter info box from code-side to css-side
+- Added resetCaches function for cleaning the internal caches
+
 
 Authors
 -------
