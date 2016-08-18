@@ -63,3 +63,24 @@
     left: 3px;
     color: #99a1a7;
 }
+
+.leaflet-bar.easy-button-container.leaflet-control {
+    text-align: left !important;
+}
+
+.leaflet-bar span.filter-info-box {
+    position: absolute;
+    margin-top: -5px;
+    margin-left: 10px;
+    color: white;
+    font-size: 12px;
+    text-transform: uppercase;
+    padding: .2em .6em .3em;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+    background-color: #454b52;
+    box-sizing: inherit !important;
+}
