@@ -89,7 +89,7 @@ Method                          | Returns		| Description
 `hasFiltered()`                 | `Boolean`		| returns true if any tag(s) selected otherwise false.
 `registerCustomSource(<`[`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)`> source`) | `throws an exception if `source` has no name or `source.hide` function is not implemented`		| Register `source` object for filtering markers by tags. If you wanto to use this function you must implement `hide` function  
 `enablePruneCluster(<`[`PruneCluster`](https://github.com/SINTEF-9012/PruneCluster)`> pruneClusterInstance`) | `void`	| Searches markers on given `pruneClusterInstance` for filtering
-`resetCaches(<`[`Boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)`> update?`) | `void` | Resets internal caches. `update` parameter if sent as true, the `update()` function is called after cleaning the cache.
+`resetCaches(<`[`Boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)`> update?`) | `void` | Resets internal caches. `update` parameter if sent as true, the `update()` function will call after cleaning the cache.
 
 
 ----------
