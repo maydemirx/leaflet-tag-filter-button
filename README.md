@@ -3,7 +3,7 @@ Adds tag filter control for marker to LeafLet.
 
 Required [Leaflet.EasyButton](https://github.com/CliffCloud/Leaflet.EasyButton)
 
-Check out the [demo](https://leaflet-tag-filter-button.herokuapp.com)
+Check out the [demo](https://cdn.rawgit.com/maydemirx/leaflet-tag-filter-button/master/demo/demo.html)
 
 Usage
 -----
