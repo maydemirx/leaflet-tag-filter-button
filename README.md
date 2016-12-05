@@ -76,7 +76,7 @@ API Docs
 
 Option                 | Type          | Default              | Description
 -----------------------|---------------|----------------------|----------------------------
-`icon`               | `String|HTML`  | `fa-filter`          | Buton icon default is fa-filter. You can use html syntax for the icon for example `<img src="/filter.png">`
+`icon`               | `String|HTML`  | `fa-filter`          | The button icon. Default is fa-filter. You can use html syntax for the icon for example `<img src="/filter.png">`
 `onSelectionComplete`               | `Function`  | `null`    | The callback function for selected tags. It fires when popup is closed and sends selected tags to the callback function as a parameter.
 `data`               | `Array|Function`  | `null`    | The data to be used for tags popup, it can be array or function
 `clearText`               | `String`  | `clear`    | The text of the clear button
