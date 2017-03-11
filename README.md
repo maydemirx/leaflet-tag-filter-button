@@ -80,6 +80,7 @@ Option                 | Type          | Default              | Description
 `onSelectionComplete`               | `Function`  | `null`    | The callback function for selected tags. It fires when popup is closed and sends selected tags to the callback function as a parameter.
 `data`               | `Array|Function`  | `null`    | The data to be used for tags popup, it can be array or function
 `clearText`               | `String`  | `clear`    | The text of the clear button
+`filterOnEveryClick`  | `Boolean`  | `false`    | if set as true the plugin do filtering operation on every click event on the checkboxes.
 
 ### Methods
 
