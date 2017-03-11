@@ -78,7 +78,7 @@ Option                 | Type          | Default              | Description
 -----------------------|---------------|----------------------|----------------------------
 `icon`               | `String|HTML`  | `fa-filter`          | The button icon. Default is fa-filter. You can use html syntax for the icon for example `<img src="/filter.png">`
 `onSelectionComplete`               | `Function`  | `null`    | The callback function for selected tags. It fires when popup is closed and sends selected tags to the callback function as a parameter.
-`data`               | `Array|Function`  | `null`    | The data to be used for tags popup, it can be array or function
+`data`               | `Array|Function`  | `null`    | The data to be used for tags popup, it can be array or function. If it's a function, the function must return tags array.
 `clearText`               | `String`  | `clear`    | The text of the clear button
 `filterOnEveryClick`  | `Boolean`  | `false`    | if set as true the plugin do filtering operation on every click event on the checkboxes.
 
