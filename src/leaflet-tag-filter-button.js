@@ -8,6 +8,7 @@
             data: null, // the data to be used for tags popup, it can be array or function
             clearText: 'clear', // the text of the clear button
             filterOnEveryClick: false, // if set as true the plugin do filtering operation on every click event on the checkboxes
+            openPopupOnHover: false, // if set as true the popup that contains tags will be open at mouse hover time
 
             ajaxData: null // it can be used for remote data TODO: implement it!
         },
@@ -295,6 +296,10 @@
 
         _showTagFilterPopup: function() {
 
+            if (this._tagFilterPopupIsOpen()) {
+                return;
+            }
+
             this._easyButton.button.style.display = "none";
             this._filterInfo.style.display = "none";
 
@@ -314,6 +319,10 @@
                 }
             }
 
+        },
+
+        _tagFilterPopupIsOpen: function() {
+            return this._container.style.display == 'block';
         },
 
         filter: function() {
@@ -357,7 +366,13 @@
 
         addTo: function(map) {
             this._map = map;
-            this._easyButton = L.easyButton(this.options.icon, this._showTagFilterPopup.bind(this)).addTo(map);
+            if (this.options.openPopupOnHover) {
+                this._easyButton = L.easyButton(this.options.icon, function() {
+                }).addTo(map);
+                L.DomEvent.addListener(this._easyButton._container, 'mouseover', this._showTagFilterPopup.bind(this));
+            } else {
+                this._easyButton = L.easyButton(this.options.icon, this._showTagFilterPopup.bind(this)).addTo(map);
+            }
             this._container = L.DomUtil.create('div', 'tag-filter-tags-container', this._easyButton._container);
 
             if (!L.Browser.touch) {
