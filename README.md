@@ -81,6 +81,7 @@ Option                 | Type          | Default              | Description
 `data`               | `Array|Function`  | `null`    | The data to be used for tags popup, it can be array or function. If it's a function, the function must return tags array.
 `clearText`               | `String`  | `clear`    | The text of the clear button
 `filterOnEveryClick`  | `Boolean`  | `false`    | if set as true the plugin do filtering operation on every click event on the checkboxes.
+`openPopupOnHover`  | `Boolean`  | `false`    | if set as true, the popup that contains tags will be open at mouse over time.
 
 ### Methods
 
