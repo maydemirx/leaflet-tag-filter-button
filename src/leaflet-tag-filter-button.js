@@ -386,7 +386,7 @@
             this._showFilterInfo(0);
 
             this._clearEl = L.DomUtil.create('ul', 'header', this._container);
-            this._clearEl.innerHTML = `<li class='ripple'><a>${this.options.clearText}</a></li>`;
+            this._clearEl.innerHTML = "<li class='ripple'><a>" + this.options.clearText + "</a></li>";
 
             L.DomEvent.addListener(this._clearEl.getElementsByTagName('a')[0], 'click', this._clearSelections.bind(this));
             L.DomEvent.addListener(this._clearEl.getElementsByTagName('li')[0], 'click', this._clearSelections.bind(this));
