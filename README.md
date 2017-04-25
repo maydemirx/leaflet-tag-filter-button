@@ -1,5 +1,5 @@
 # Leaflet Tag Filter Button
-Adds tag filter control for marker to LeafLet. 
+Adds tag filter control for layers (marker, geojson features etc.) to LeafLet.
 
 Required [Leaflet.EasyButton](https://github.com/CliffCloud/Leaflet.EasyButton)
 
