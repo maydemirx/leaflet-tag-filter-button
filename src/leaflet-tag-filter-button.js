@@ -21,6 +21,7 @@
         _filterInfo: null,
         _selectedTags: [],
         _invisibles: [],
+        layerSources: null,
 
         // GLOBAL FUNCTIONS
 
@@ -140,12 +141,14 @@
             this.layerSources.currentSource = this.layerSources.sources["pruneCluster"];
         },
 
-        layerSources: {
+        _prepareLayerSources: function() {
 
-            currentSource: null,
+            this.layerSources = new Object();
+            this.layerSources["sources"] = new Object();
 
-            sources: {
-                default: {
+           this.registerCustomSource({
+                "name": "default",
+                "source": {
                     hide: function() {
 
                         var toBeRemovedFromInvisibles = [], i;
@@ -195,7 +198,8 @@
                         return totalCount - removedMarkers.length;
                     }
                 }
-            }
+            });
+            this.layerSources.currentSource = this.layerSources.sources["default"];
         },
 
         _showFilterInfo: function(filteredCount) {
@@ -361,7 +365,7 @@
 
         initialize: function(options) {
             L.Util.setOptions(this, options || {});
-            this.layerSources.currentSource = this.layerSources.sources["default"];
+            this._prepareLayerSources();
         },
 
         addTo: function(map) {
