@@ -116,3 +116,4 @@ Authors
 -------
 
 * Mehmet Aydemir
+* Viktor Garske @v-gar
