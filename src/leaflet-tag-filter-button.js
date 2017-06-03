@@ -245,7 +245,7 @@
                 var a = L.DomUtil.create('a', '', li);
                 var text = data[i];
                 var value = data[i];
-                if (typeof text == 'object' && Object.keys(data[i]) == 2) { // key,value
+                if (typeof text == 'object' && Object.keys(data[i]).length == 2) { // key,value
                     text = data[i].name;
                     value = data[i].value;
                 }
