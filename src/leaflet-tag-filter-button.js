@@ -20,7 +20,8 @@
         _clearEl: null,
         _filterInfo: null,
         _selectedTags: [],
-        _invisibles: [],
+        _invisibles: null,
+        _releatedFilterButtons: null,
         layerSources: null,
 
         // GLOBAL FUNCTIONS
@@ -105,9 +106,15 @@
 
                         if (this._selectedTags.length > 0) {
 
+                            var releatedLayers = [];
+
+                            for (var r = 0; r < this._releatedFilterButtons.length; r++) {
+                                releatedLayers = releatedLayers.concat(this._releatedFilterButtons[r].getInvisibles());
+                            }
+
                             var markers = layerSource.pruneCluster.GetMarkers();
                             for (i = 0; i < markers.length; i++) {
-                                if (markers[i].data && markers[i].data.tags) {
+                                if (releatedLayers.indexOf(markers[i]) == -1 && markers[i].data && markers[i].data.tags) {
                                     totalCount++;
                                     var found = false;
                                     for (var j = 0; j < markers[i].data.tags.length; j++) {
@@ -141,6 +148,29 @@
             this.layerSources.currentSource = this.layerSources.sources["pruneCluster"];
         },
 
+        /**
+         * @function: addToReleated
+         * @param other adds another linked tagFilterButton reference to _releatedFilterButtons
+         *
+         * */
+        addToReleated: function(other) {
+            if (other && other instanceof L.Control.TagFilterButton && this._releatedFilterButtons.indexOf(other) == -1) {
+                this._releatedFilterButtons.push(other);
+                return other.addToReleated(this);
+            }
+            console.error("could not add tagFilterButton instance to releated");
+            return false;
+        },
+
+        /**
+         * @function: getInvisibles
+         * @param other gets invisibles layers hiding by this plugin
+         *
+         * */
+        getInvisibles: function() {
+            return this._invisibles;
+        },
+
         _prepareLayerSources: function() {
 
             this.layerSources = new Object();
@@ -151,14 +181,22 @@
                 "source": {
                     hide: function() {
 
+                        var releatedLayers = [];
+
+                        for (var r = 0; r < this._releatedFilterButtons.length; r++) {
+                            releatedLayers = releatedLayers.concat(this._releatedFilterButtons[r].getInvisibles());
+                        }
+
                         var toBeRemovedFromInvisibles = [], i;
 
                         for (i = 0; i < this._invisibles.length; i++) {
-                            for (j = 0; j < this._invisibles[i].options.tags.length; j++) {
-                                if (this._selectedTags.length == 0 || this._selectedTags.indexOf(this._invisibles[i].options.tags[j]) !== -1) {
-                                    this._map.addLayer(this._invisibles[i]);
-                                    toBeRemovedFromInvisibles.push(i);
-                                    break;
+                            if (releatedLayers.indexOf(this._invisibles[i]) == -1) {
+                                for (j = 0; j < this._invisibles[i].options.tags.length; j++) {
+                                    if (this._selectedTags.length == 0 || this._selectedTags.indexOf(this._invisibles[i].options.tags[j]) !== -1) {
+                                        this._map.addLayer(this._invisibles[i]);
+                                        toBeRemovedFromInvisibles.push(i);
+                                        break;
+                                    }
                                 }
                             }
                         }
@@ -175,15 +213,17 @@
                             this._map.eachLayer(function(layer) {
                                 if (layer && layer.options && layer.options.tags) {
                                     totalCount++;
-                                    var found = false;
-                                    for (var i = 0; i < layer.options.tags.length; i++) {
-                                        found = this._selectedTags.indexOf(layer.options.tags[i]) !== -1;
-                                        if (found) {
-                                            break;
+                                    if (releatedLayers.indexOf(layer) == -1) {
+                                        var found = false;
+                                        for (var i = 0; i < layer.options.tags.length; i++) {
+                                            found = this._selectedTags.indexOf(layer.options.tags[i]) !== -1;
+                                            if (found) {
+                                                break;
+                                            }
                                         }
-                                    }
-                                    if (!found) {
-                                        removedMarkers.push(layer);
+                                        if (!found) {
+                                            removedMarkers.push(layer);
+                                        }
                                     }
                                 }
                             }.bind(this));
@@ -353,9 +393,10 @@
         },
 
         hide: function(accept) {
-            if (this._container.style.display == "none") {
+            if (this._container && (this._container.style.display == "none" || this._container.style.display == "")) {
                 return;
             }
+            debugger;
             if (this._container) {
                 this._container.style.display = "none";
             }
@@ -364,6 +405,8 @@
         },
 
         initialize: function(options) {
+            this._invisibles = [];
+            this._releatedFilterButtons = [];
             L.Util.setOptions(this, options || {});
             this._prepareLayerSources();
         },
