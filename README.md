@@ -99,18 +99,7 @@ Method                          | Returns		| Description
 Change Log
 -----
 
-**v0.0.2 (30.06.2016)**
-
- - Added multi layer source support. 
- > You can add a new marker container layer source to plugin and the plugin searches on added source.
- 
- - Added [PruneCluster](https://github.com/SINTEF-9012/PruneCluster) support.
- > Added [PruneCluster](https://github.com/SINTEF-9012/PruneCluster)  layer source to the plugin as default. You can enable it by enablePruneCluster function.
-
-**v0.0.3 (18.08.2016)**
-- Moved css of filter info box from code-side to css-side
-- Added resetCaches function for cleaning the internal caches
-
+Please check the [Releases](https://github.com/maydemirx/leaflet-tag-filter-button/releases) page
 
 Authors
 -------
