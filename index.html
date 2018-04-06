@@ -1,54 +1,354 @@
 <!DOCTYPE html>
-<html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->  
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->  
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
 <head>
-<title>
-	Leaflet Tag Filter Button Demo
-</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
-<link rel="stylesheet" href="leaflet.css" />
-<link rel="stylesheet" href="leaflet-easy-button.css" />
-<link rel="stylesheet" href="leaflet-tag-filter-button.css" />
-<link rel="stylesheet" href="ripple.min.css" />
-<script src="leaflet.js"></script>
-<script src="leaflet-easy-button.js"></script>
-<script src="leaflet-tag-filter-button.js"></script>
-</head>
-<body>
-<h1>Leaflet Tag Filter Button Demo</h1>
-<p></p>
-<div id="map" style="width: 100%; height: 400px"></div>
+    <title>Responsive website template for documentations</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">    
+    <link rel="shortcut icon" href="favicon.ico">  
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">   
+    <!-- Plugins CSS -->    
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="assets/plugins/prism/prism.css">
+    <link rel="stylesheet" href="assets/plugins/elegant_font/css/style.css">
 
 
-<script type="text/javascript">
+    <link rel="stylesheet" href="assets/css/leaflet.css" />
+    <link rel="stylesheet" href="assets/css/leaflet-easy-button.css" />
+    <link rel="stylesheet" href="assets/css/leaflet-tag-filter-button.css" />
+    <link rel="stylesheet" href="assets/css/ripple.min.css" />
+    
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+.leaflet-map {
+  height: 500px;
+  width: 100%;
+}
+
+.easy-button-button {
+  display: block !important;
+}
+
+.tag-filter-tags-container {
+  left: 30px;
+}
+</style>
+    
+</head> 
+
+<body class="body-green">
+    <div class="page-wrapper">
+        <!-- ******Header****** -->
+        
+        <div class="doc-wrapper">
+            <div class="container">
+                <div id="doc-header" class="doc-header text-center">
+                    <h1 class="doc-title"><i class="icon fa fa-filter"></i> Leaflet Tag Filter Button</h1>
+                    <div class="meta"><i class="fa fa-clock-o"></i> Last updated: Apr 5th, 2018</div>
+
+                </div><!--//doc-header-->
+                <div class="doc-body">
+                    <div class="doc-content">
+                        <div class="content-inner">
+                            <section id="download-section" class="doc-section">
+                                <h2 class="section-title">Download</h2>
+                                <div class="section-block">
+                                    <p>Adds tag filter control for layers (marker, geojson features etc.) to LeafLet.
+                                    </p>
+                                    <a href="https://github.com/maydemirx/leaflet-tag-filter-button" class="btn btn-green" target="_blank"><i class="fa fa-download"></i> Please visit github repo</a>
+                                </div>
+                            </section><!--//doc-section-->
+                            
+                            
+                            <section id="simple-usage-section" class="doc-section">
+                                <h2 class="section-title">Simple Usage</h2>
+                                <div class="section-block">
+                                    
+
+                                <div id="simple-usage-example" class="code-block">
+                                        <h6>Example</h6>
+                                        <div class="callout-block callout-info">
+                                            <div class="icon-holder">
+                                                <i class="fa fa-info-circle"></i>
+                                            </div><!--//icon-holder-->
+                                            <div class="content">
+                                                <h4 class="callout-title">Note</h4>
+                                                <p>The ripple effect is not part of this project. If you want to use it you must add <a href="https://github.com/mladenplavsic/css-ripple-effect">mladenplavsic ripple effect</a> to your project. The tag-filter-button is using ripple css class for checkboxes as default. </p>
+                                            </div><!--//content-->
+                                        </div><!--//callout-block-->
+                                        <div id="simple-usage-map" style="width: 100%; height: 400px"></div>
+                                    </div><!--//code-block-->
+
+
+
+                                    
+                                    <div id="simple-usage-code" class="code-block">
+                                        <h6>Code</h6>
+                                        <div class="callout-block callout-danger">
+                                        <div class="icon-holder">
+                                            <i class="fa fa-exclamation-triangle"></i>
+                                        </div><!--//icon-holder-->
+                                        <div class="content">
+                                            <h4 class="callout-title">Attention:</h4>
+                                            <p>You need to download all js and css file like leaflet.js or easybutton.js from docs folder in my <a href="https://github.com/maydemirx/leaflet-tag-filter-button" target="_blank">repo</a></p>
+                                        </div><!--//content-->
+                                    </div>
+                                        <pre><code class="language-markup">
+
+&#x3C;!DOCTYPE html&#x3E;
+&#x3C;html&#x3E;
+&#x3C;head&#x3E;
+&#x3C;title&#x3E;
+&#x9;Leaflet Tag Filter Button Example
+&#x3C;/title&#x3E;
+&#x3C;meta name=&#x22;viewport&#x22; content=&#x22;width=device-width, initial-scale=1&#x22;&#x3E;
+&#x3C;link rel=&#x22;stylesheet&#x22; href=&#x22;leaflet.css&#x22; /&#x3E;
+&#x3C;link rel=&#x22;stylesheet&#x22; href=&#x22;leaflet-easy-button.css&#x22; /&#x3E;
+&#x3C;link rel=&#x22;stylesheet&#x22; href=&#x22;../src/leaflet-tag-filter-button.css&#x22; /&#x3E;
+&#x3C;link rel=&#x22;stylesheet&#x22; href=&#x22;ripple.min.css&#x22; /&#x3E;
+&#x3C;script src=&#x22;leaflet.js&#x22;&#x3E;&#x3C;/script&#x3E;
+&#x3C;script src=&#x22;leaflet-easy-button.js&#x22;&#x3E;&#x3C;/script&#x3E;
+&#x3C;script src=&#x22;leaflet-tag-filter-button.js&#x22;&#x3E;&#x3C;/script&#x3E;
+&#x3C;/head&#x3E;
+&#x3C;body&#x3E;
+&#x3C;div id=&#x22;map&#x22; style=&#x22;width: 100%; height: 400px&#x22;&#x3E;&#x3C;/div&#x3E;
+&#x3C;script type=&#x22;text/javascript&#x22;&#x3E;
 
 $(function(argument) {
-	var map = L.map('map').setView([36.86, 30.75], 12);
-	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWF5ZGVtaXJ4IiwiYSI6ImNpbGIweWdmMDAwM3h2cWx6a2QxaTc5YmMifQ.dpkSDE4DYKn6in5ODl_pWg', {
-			maxZoom: 18,
-			attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-				'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-				'Imagery © <a href="http://mapbox.com">Mapbox</a>',
-			id: 'mapbox.streets'
-		}).addTo(map);
+&#x9;var map = L.map(&#x27;map&#x27;).setView([36.86, 30.75], 12);
+&#x9;L.tileLayer(&#x27;https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWF5ZGVtaXJ4IiwiYSI6ImNpbGIweWdmMDAwM3h2cWx6a2QxaTc5YmMifQ.dpkSDE4DYKn6in5ODl_pWg&#x27;, {
+&#x9;&#x9;&#x9;maxZoom: 18,
+&#x9;&#x9;&#x9;attribution: &#x27;Map data &#x26;copy; &#x3C;a href=&#x22;http://openstreetmap.org&#x22;&#x3E;OpenStreetMap&#x3C;/a&#x3E; contributors, &#x27; +
+&#x9;&#x9;&#x9;&#x9;&#x27;&#x3C;a href=&#x22;http://creativecommons.org/licenses/by-sa/2.0/&#x22;&#x3E;CC-BY-SA&#x3C;/a&#x3E;, &#x27; +
+&#x9;&#x9;&#x9;&#x9;&#x27;Imagery &#xA9; &#x3C;a href=&#x22;http://mapbox.com&#x22;&#x3E;Mapbox&#x3C;/a&#x3E;&#x27;,
+&#x9;&#x9;&#x9;id: &#x27;mapbox.streets&#x27;
+&#x9;&#x9;}).addTo(map);
 
 
-	var fastMarker = L.marker([36.8963965256, 30.7087719440], { tags: ['fast'] }).addTo(map).bindPopup('fast'); 
-	var slowMarker = L.marker([36.8967740487, 30.7107782364], { tags: ['slow'] }).addTo(map).bindPopup('slow');
-	var bothMarker = L.marker([36.8881768737, 30.7024331594], { tags: ['fast', 'slow'] }).addTo(map).bindPopup('fast & slow');
+&#x9;var fastMarker = L.marker([36.8963965256, 30.7087719440], { tags: [&#x27;fast&#x27;] }).addTo(map).bindPopup(&#x27;fast&#x27;); 
+&#x9;var slowMarker = L.marker([36.8967740487, 30.7107782364], { tags: [&#x27;slow&#x27;] }).addTo(map).bindPopup(&#x27;slow&#x27;);
+&#x9;var bothMarker = L.marker([36.8881768737, 30.7024331594], { tags: [&#x27;fast&#x27;, &#x27;slow&#x27;] }).addTo(map).bindPopup(&#x27;fast &#x26; slow&#x27;);
 
-	//
+&#x9;//
 
-	L.control.tagFilterButton({
-        data: ['fast', 'slow', 'none'],
-        icon: '<img src="filter.png">',
+&#x9;L.control.tagFilterButton({
+        data: [&#x27;fast&#x27;, &#x27;slow&#x27;, &#x27;none&#x27;],
+        icon: &#x27;&#x3C;img src=&#x22;filter.png&#x22;&#x3E;&#x27;,
         filterOnEveryClick: true
     }).addTo( map );
 });
 
-</script>
+&#x3C;/script&#x3E;
+&#x3C;/body&#x3E;
+                                        </code></pre>
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
+                          
+                                
+                              
+                              
+                            </section><!--//simple-usage-section-->
+                            
+                         
 
-<p><b>Note:</b> The ripple effect is not part of this project. If you want to use it you must add <a href="https://github.com/mladenplavsic/css-ripple-effect">mladenplavsic ripple effect</a> to your project. The tag-filter-button is using ripple css class for checkboxes as default. </p>
 
+                            
+
+                             <section id="releated-usage-section" class="doc-section">
+                                <h2 class="section-title">Releated Buttons Usage</h2>
+                                <div class="section-block">
+                                    
+
+                                <div id="releated-usage-example" class="code-block">
+                                        <h6>Example</h6>
+                                        <div class="callout-block callout-info">
+                                            <div class="icon-holder">
+                                                <i class="fa fa-info-circle"></i>
+                                            </div><!--//icon-holder-->
+                                            <div class="content">
+                                                <h4 class="callout-title">Note</h4>
+                                                <p>The ripple effect is not part of this project. If you want to use it you must add <a href="https://github.com/mladenplavsic/css-ripple-effect">mladenplavsic ripple effect</a> to your project. The tag-filter-button is using ripple css class for checkboxes as default. </p>
+                                                <p>For further of this example details please check the issue: <a href="https://github.com/maydemirx/leaflet-tag-filter-button/issues/10"> using multiple tag filters in same map #10 </a> </p>
+
+                                                <p>You can use <code> addToReleated() </code> function to link two tagFilterButton instance </p>
+
+                                            </div><!--//content-->
+                                        </div><!--//callout-block-->
+
+
+                                        <div id="releated-usage-map" style="width: 100%; height: 400px"></div>
+                                    </div><!--//code-block-->
+
+
+
+                                    
+                                    <div id="releated-usage-code" class="code-block">
+                                        <h6>Code</h6>
+                                        <div class="callout-block callout-danger">
+                                        <div class="icon-holder">
+                                            <i class="fa fa-exclamation-triangle"></i>
+                                        </div><!--//icon-holder-->
+                                        <div class="content">
+                                            <h4 class="callout-title">Attention:</h4>
+                                            <p>You need to download all js and css file like leaflet.js or easybutton.js from docs folder in my <a href="https://github.com/maydemirx/leaflet-tag-filter-button" target="_blank">repo</a></p>
+                                        </div><!--//content-->
+                                    </div>
+                                        <pre><code class="language-markup">
+
+&#x3C;!DOCTYPE html&#x3E;
+&#x3C;html&#x3E;
+&#x3C;head&#x3E;
+&#x3C;title&#x3E;
+&#x9;Leaflet Tag Filter Button Example
+&#x3C;/title&#x3E;
+&#x3C;meta name=&#x22;viewport&#x22; content=&#x22;width=device-width, initial-scale=1&#x22;&#x3E;
+&#x3C;link rel=&#x22;stylesheet&#x22; href=&#x22;leaflet.css&#x22; /&#x3E;
+&#x3C;link rel=&#x22;stylesheet&#x22; href=&#x22;leaflet-easy-button.css&#x22; /&#x3E;
+&#x3C;link rel=&#x22;stylesheet&#x22; href=&#x22;../src/leaflet-tag-filter-button.css&#x22; /&#x3E;
+&#x3C;link rel=&#x22;stylesheet&#x22; href=&#x22;ripple.min.css&#x22; /&#x3E;
+&#x3C;script src=&#x22;leaflet.js&#x22;&#x3E;&#x3C;/script&#x3E;
+&#x3C;script src=&#x22;leaflet-easy-button.js&#x22;&#x3E;&#x3C;/script&#x3E;
+&#x3C;script src=&#x22;leaflet-tag-filter-button.js&#x22;&#x3E;&#x3C;/script&#x3E;
+&#x3C;style&#x3E;
+.leaflet-map {
+  height: 500px;
+  width: 100%;
+}
+
+.easy-button-button {
+  display: block !important;
+}
+
+.tag-filter-tags-container {
+  left: 30px;
+}
+&#x3C;/style&#x3E;
+&#x3C;/head&#x3E;
+&#x3C;body&#x3E;
+&#x3C;div id=&#x22;map&#x22; style=&#x22;width: 100%; height: 400px&#x22;&#x3E;&#x3C;/div&#x3E;
+&#x3C;script type=&#x22;text/javascript&#x22;&#x3E;
+
+$(function(argument) {
+&#x9;var osmUrl = &#x27;http://{s}.tile.osm.org/{z}/{x}/{y}.png&#x27;,
+        osmAttrib = &#x27;&#x26;copy; &#x3C;a href=&#x22;http://openstreetmap.org/copyright&#x22;&#x3E;OpenStreetMap&#x3C;/a&#x3E; contributors&#x27;,
+        osm = L.tileLayer(osmUrl, {
+            maxZoom: 18,
+            attribution: osmAttrib
+        });
+
+    // initialize the map on the &#x22;map&#x22; div with a given center and zoom
+    var releatedUsageMap = L.map(&#x27;releated-usage-map&#x27;).setView([50.5, 30.5], 12).addLayer(osm);
+
+    L.marker([50.521, 30.52], { tags: [&#x27;tomato&#x27;, &#x27;active&#x27;] }).bindPopup(&#x27;tomato, active&#x27;).addTo(releatedUsageMap); 
+    L.marker([50.487, 30.54], { tags: [&#x27;tomato&#x27;, &#x27;ended&#x27;] }).bindPopup(&#x27;tomato, ended&#x27;).addTo(releatedUsageMap);
+    L.marker([50.533, 30.5], { tags: [&#x27;tomato&#x27;, &#x27;ended&#x27;] }).bindPopup(&#x27;tomato, ended&#x27;).addTo(releatedUsageMap);
+    L.marker([50.54, 30.48], { tags: [&#x27;strawberry&#x27;, &#x27;active&#x27;] }).bindPopup(&#x27;strawberry, active&#x27;).addTo(releatedUsageMap);
+    L.marker([50.505, 30.46], { tags: [&#x27;strawberry&#x27;, &#x27;ended&#x27;] }).bindPopup(&#x27;strawberry, ended&#x27;).addTo(releatedUsageMap);
+    L.marker([50.5, 30.43], { tags: [&#x27;cherry&#x27;, &#x27;active&#x27;] }).bindPopup(&#x27;cherry, active&#x27;).addTo(releatedUsageMap);
+    L.marker([50.48, 30.5], { tags: [&#x27;cherry&#x27;, &#x27;ended&#x27;] }).bindPopup(&#x27;cherry, ended&#x27;).addTo(releatedUsageMap);
+
+     var statusFilterButton = L.control.tagFilterButton({
+        data: [&#x27;active&#x27;, &#x27;ended&#x27;],
+      filterOnEveryClick: true,
+      icon: &#x27;&#x3C;i class=&#x22;fa fa-suitcase&#x22;&#x3E;&#x3C;/i&#x3E;&#x27;,
+    }).addTo( releatedUsageMap );
+
+    var foodFilterButton = L.control.tagFilterButton({
+        data: [&#x27;tomato&#x27;, &#x27;cherry&#x27;, &#x27;strawberry&#x27;],
+      filterOnEveryClick: true,
+        icon: &#x27;&#x3C;i class=&#x22;fa fa-pagelines&#x22;&#x3E;&#x3C;/i&#x3E;&#x27;,
+    }).addTo( releatedUsageMap );
+
+    foodFilterButton.addToReleated(statusFilterButton);
+
+    jQuery(&#x27;.easy-button-button&#x27;).click(function() {
+        target = jQuery(&#x27;.easy-button-button&#x27;).not(this);
+        target.parent().find(&#x27;.tag-filter-tags-container&#x27;).css({
+            &#x27;display&#x27; : &#x27;none&#x27;,
+        });
+    });
+});
+
+&#x3C;/script&#x3E;
+&#x3C;/body&#x3E;
+                                        </code></pre>
+                                    </div><!--//code-block-->
+                                </div><!--//section-block-->
+                          
+                                
+                              
+                              
+                            </section><!--//simple-usage-section-->
+
+
+                         
+                        </div><!--//content-inner-->
+                    </div><!--//doc-content-->
+                    <div class="doc-sidebar hidden-xs">
+                        <nav id="doc-nav">
+                            <ul id="doc-menu" class="nav doc-menu" data-spy="affix">
+                                <li><a class="scrollto" href="#download-section">Download</a></li>
+                                <li>
+                                    <a class="scrollto" href="#simple-usage-section">Simple Usage</a>
+                                    <ul class="nav doc-sub-menu">
+                                        <li><a class="scrollto" href="#simple-usage-example">Example</a></li>
+                                        <li><a class="scrollto" href="#simple-usage-code">Code</a></li>
+                                    </ul><!--//nav-->
+                                </li>
+                                <li>
+                                    <a class="scrollto" href="#releated-usage-section">Releated Buttons Usage</a>
+                                    <ul class="nav doc-sub-menu">
+                                        <li><a class="scrollto" href="#releated-usage-example">Example</a></li>
+                                        <li><a class="scrollto" href="#releated-usage-code">Code</a></li>
+                                    </ul><!--//nav-->
+                                </li>
+                            </ul><!--//doc-menu-->
+                        </nav>
+                    </div><!--//doc-sidebar-->
+                </div><!--//doc-body-->              
+            </div><!--//container-->
+        </div><!--//doc-wrapper-->
+        
+        
+        
+    </div><!--//page-wrapper-->
+    
+    <footer id="footer" class="footer text-center">
+        <div class="container">
+            <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can check out other license options via our website: themes.3rdwavemedia.com */-->
+            <small class="copyright">Designed with <i class="fa fa-heart"></i> by <a href="http://themes.3rdwavemedia.com/" targe="_blank">Xiaoying Riley</a> for developers</small>
+            
+        </div><!--//container-->
+    </footer><!--//footer-->
+    
+     
+    <!-- Main Javascript -->          
+    <script type="text/javascript" src="assets/plugins/jquery-1.12.3.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="assets/plugins/prism/prism.js"></script>    
+    <script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>                                                                
+    <script type="text/javascript" src="assets/plugins/jquery-match-height/jquery.matchHeight-min.js"></script>
+    <script type="text/javascript" src="assets/js/main.js"></script>
+    <script type="text/javascript" src="assets/js/leaflet.js"></script>
+    <script type="text/javascript" src="assets/js/leaflet-easy-button.js"></script>
+    <script type="text/javascript" src="assets/js/leaflet-tag-filter-button.js"></script>
+
+
+    
 </body>
-</html>
+</html> 
+
