@@ -92,6 +92,7 @@ Method                          | Returns		| Description
 `registerCustomSource(<`[`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)`> source`) | `throws an exception if `source` has no name or `source.hide` function is not implemented`		| Registers `source` object for filtering markers by tags. If you want to to use this function you must implement `hide` function  
 `enablePruneCluster(<`[`PruneCluster`](https://github.com/SINTEF-9012/PruneCluster)`> pruneClusterInstance`) | `void`	| Searches markers for filtering on given `pruneClusterInstance` object
 `resetCaches(<`[`Boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)`> update?`) | `void` | Resets internal caches. if the `update` parameter sent as true, the `update()` function will be call after cleaning the cache.
+`addToReleated(<`[`TagFilterButton`](https://github.com/maydemirx/leaflet-tag-filter-button)`> tagFilterButton)` | `Boolean` | If it required to use multiple TagFilterButtons in the same map you must link two instance of TagFilterButtons by using this method. If linking is successful returns true otherwise returns false.
 
 
 ----------
