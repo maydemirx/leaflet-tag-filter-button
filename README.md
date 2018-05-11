@@ -105,5 +105,4 @@ Please check the [Releases](https://github.com/maydemirx/leaflet-tag-filter-butt
 Authors
 -------
 
-* Mehmet Aydemir
-* Viktor Garske @v-gar
+Thanks to [Contributors](https://github.com/maydemirx/leaflet-tag-filter-button/graphs/contributors)
