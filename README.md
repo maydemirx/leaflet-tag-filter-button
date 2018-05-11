@@ -11,7 +11,6 @@ Adds tag filter control for layers (marker, geojson features etc.) to LeafLet. C
 - [Authors](#authors)
 
 # Usage
------
 
 Required [Leaflet.EasyButton](https://github.com/CliffCloud/Leaflet.EasyButton)
 
@@ -73,11 +72,7 @@ L.tagFilterButton({
 ```
 
 
-----------
-
-
 # API Docs
-------
 
 ### Options
 
@@ -101,15 +96,10 @@ Method                          | Returns		| Description
 `resetCaches(<`[`Boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)`> update?`) | `void` | Resets internal caches. if the `update` parameter sent as true, the `update()` function will be call after cleaning the cache.
 `addToReleated(<`[`TagFilterButton`](https://github.com/maydemirx/leaflet-tag-filter-button)`> tagFilterButton)` | `Boolean` | If it required to use multiple TagFilterButtons in the same map you must link two instance of TagFilterButtons by using this method. If linking is successful returns true otherwise returns false.
 
-
-----------
-
 # Change Log
------
 
 Please check the [Releases](https://github.com/maydemirx/leaflet-tag-filter-button/releases) page
 
 # Authors
--------
 
 Thanks to [Contributors](https://github.com/maydemirx/leaflet-tag-filter-button/graphs/contributors)
