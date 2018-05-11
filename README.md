@@ -1,12 +1,19 @@
 # Leaflet Tag Filter Button
-Adds tag filter control for layers (marker, geojson features etc.) to LeafLet.
+Adds tag filter control for layers (marker, geojson features etc.) to LeafLet. Check out the [demo](http://maydemirx.github.io/leaflet-tag-filter-button/)
+
+- [Usage](#usage)
+  * [Set data from external url/ajax](#set-data-from-external-url-or-ajax)
+  * [Selection complete callback](#selection-complete-callback)
+- [API Docs](#api-docs)
+    + [Options](#options)
+    + [Methods](#methods)
+- [Change Log](#change-log)
+- [Authors](#authors)
+
+# Usage
+-----
 
 Required [Leaflet.EasyButton](https://github.com/CliffCloud/Leaflet.EasyButton)
-
-Check out the [demo](http://maydemirx.github.io/leaflet-tag-filter-button/)
-
-Usage
------
 
 Simple usage :
 
@@ -28,7 +35,7 @@ L.control.tagFilterButton({
 ```
 
 
-Set data from external url/ajax :
+## Set data from external url or ajax
 
 *note: this option not implemented yet!*
 
@@ -46,7 +53,7 @@ L.tagFilterButton({
 
 ```
 
-Selection complete callback
+## Selection complete callback
 
 ```
 
@@ -69,7 +76,7 @@ L.tagFilterButton({
 ----------
 
 
-API Docs
+# API Docs
 ------
 
 ### Options
@@ -97,12 +104,12 @@ Method                          | Returns		| Description
 
 ----------
 
-Change Log
+# Change Log
 -----
 
 Please check the [Releases](https://github.com/maydemirx/leaflet-tag-filter-button/releases) page
 
-Authors
+# Authors
 -------
 
 Thanks to [Contributors](https://github.com/maydemirx/leaflet-tag-filter-button/graphs/contributors)
