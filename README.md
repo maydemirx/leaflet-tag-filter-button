@@ -1,6 +1,8 @@
 # Leaflet Tag Filter Button
 Adds tag filter control for layers (marker, geojson features etc.) to LeafLet. Check out the [demo](http://maydemirx.github.io/leaflet-tag-filter-button/)
 
+[![](https://data.jsdelivr.com/v1/package/npm/leaflet-tag-filter-button/badge)](https://www.jsdelivr.com/package/npm/leaflet-tag-filter-button)
+
 - [Usage](#usage)
   * [Set data from external url/ajax](#set-data-from-external-url-or-ajax)
   * [Selection complete callback](#selection-complete-callback)
