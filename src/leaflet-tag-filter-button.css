@@ -94,7 +94,7 @@
     font-size: 12px; 
     font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
     color: hsl(180, 40%, 40%);
-    display: inline-block; 
+    display: inline; 
     padding: 5px 15px;
     text-decoration: none;
     cursor: pointer; 
