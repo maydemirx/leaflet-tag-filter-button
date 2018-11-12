@@ -138,3 +138,6 @@
 .leaflet-bar .tag-filter-tags-container ::-webkit-scrollbar-thumb:hover {
     background:#7d7d7d;
 }
+.leaflet-bar .tag-filter-tags-container a, .leaflet-bar .tag-filter-tags-container .checkbox {
+    white-space: nowrap;
+}
