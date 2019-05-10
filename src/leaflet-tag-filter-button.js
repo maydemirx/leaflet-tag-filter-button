@@ -396,7 +396,6 @@
             if (this._container && (this._container.style.display == "none" || this._container.style.display == "")) {
                 return;
             }
-            debugger;
             if (this._container) {
                 this._container.style.display = "none";
             }
