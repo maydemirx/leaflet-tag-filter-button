@@ -1,12 +1,20 @@
 # Leaflet Tag Filter Button
-Adds tag filter control for marker to LeafLet. 
+Adds tag filter control for layers (marker, geojson features etc.) to LeafLet. Check out the [demo](http://maydemirx.github.io/leaflet-tag-filter-button/)
+
+[![](https://data.jsdelivr.com/v1/package/npm/leaflet-tag-filter-button/badge)](https://www.jsdelivr.com/package/npm/leaflet-tag-filter-button)
+
+- [Usage](#usage)
+  * [Set data from external url/ajax](#set-data-from-external-url-or-ajax)
+  * [Selection complete callback](#selection-complete-callback)
+- [API Docs](#api-docs)
+    + [Options](#options)
+    + [Methods](#methods)
+- [Change Log](#change-log)
+- [Authors](#authors)
+
+# Usage
 
 Required [Leaflet.EasyButton](https://github.com/CliffCloud/Leaflet.EasyButton)
-
-Check out the [demo](http://maydemirx.github.io/leaflet-tag-filter-button/)
-
-Usage
------
 
 Simple usage :
 
@@ -28,7 +36,7 @@ L.control.tagFilterButton({
 ```
 
 
-Set data from external url/ajax :
+## Set data from external url or ajax
 
 *note: this option not implemented yet!*
 
@@ -46,7 +54,7 @@ L.tagFilterButton({
 
 ```
 
-Selection complete callback
+## Selection complete callback
 
 ```
 
@@ -66,21 +74,18 @@ L.tagFilterButton({
 ```
 
 
-----------
-
-
-API Docs
-------
+# API Docs
 
 ### Options
 
 Option                 | Type          | Default              | Description
 -----------------------|---------------|----------------------|----------------------------
-`icon`               | `String|HTML`  | `fa-filter`          | The button icon. Default is fa-filter. You can use html syntax for the icon for example `<img src="/filter.png">`
+`icon`               | `String or HTML`  | `fa-filter`          | The button icon. Default is fa-filter. You can use html syntax for the icon for example `<img src="/filter.png">`
 `onSelectionComplete`               | `Function`  | `null`    | The callback function for selected tags. It fires when popup is closed and sends selected tags to the callback function as a parameter.
-`data`               | `Array|Function`  | `null`    | The data to be used for tags popup, it can be array or function. If it's a function, the function must return tags array.
+`data`               | `Array or Function`  | `null`    | The data to be used for tags popup, it can be array or function. If it's a function, the function must return tags array.
 `clearText`               | `String`  | `clear`    | The text of the clear button
 `filterOnEveryClick`  | `Boolean`  | `false`    | if set as true the plugin do filtering operation on every click event on the checkboxes.
+`openPopupOnHover`  | `Boolean`  | `false`    | if set as true, the popup that contains tags will be open at mouse over time.
 
 ### Methods
 
@@ -91,27 +96,12 @@ Method                          | Returns		| Description
 `registerCustomSource(<`[`Object`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)`> source`) | `throws an exception if `source` has no name or `source.hide` function is not implemented`		| Registers `source` object for filtering markers by tags. If you want to to use this function you must implement `hide` function  
 `enablePruneCluster(<`[`PruneCluster`](https://github.com/SINTEF-9012/PruneCluster)`> pruneClusterInstance`) | `void`	| Searches markers for filtering on given `pruneClusterInstance` object
 `resetCaches(<`[`Boolean`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean)`> update?`) | `void` | Resets internal caches. if the `update` parameter sent as true, the `update()` function will be call after cleaning the cache.
+`addToReleated(<`[`TagFilterButton`](https://github.com/maydemirx/leaflet-tag-filter-button)`> tagFilterButton)` | `Boolean` | If it required to use multiple TagFilterButtons in the same map you must link two instance of TagFilterButtons by using this method. If linking is successful returns true otherwise returns false.
 
+# Change Log
 
-----------
+Please check the [Releases](https://github.com/maydemirx/leaflet-tag-filter-button/releases) page
 
-Change Log
------
+# Authors
 
-**v0.0.2 (30.06.2016)**
-
- - Added multi layer source support. 
- > You can add a new marker container layer source to plugin and the plugin searches on added source.
- 
- - Added [PruneCluster](https://github.com/SINTEF-9012/PruneCluster) support.
- > Added [PruneCluster](https://github.com/SINTEF-9012/PruneCluster)  layer source to the plugin as default. You can enable it by enablePruneCluster function.
-
-**v0.0.3 (18.08.2016)**
-- Moved css of filter info box from code-side to css-side
-- Added resetCaches function for cleaning the internal caches
-
-
-Authors
--------
-
-* Mehmet Aydemir
+Thanks to [Contributors](https://github.com/maydemirx/leaflet-tag-filter-button/graphs/contributors)
