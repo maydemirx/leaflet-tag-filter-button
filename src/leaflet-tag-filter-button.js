@@ -439,7 +439,8 @@
                 L.DomEvent.disableClickPropagation(this._container);
                 L.DomEvent.disableScrollPropagation(this._container);
             } else {
-                L.DomEvent.on(this._container, 'click', L.DomEvent.stopPropagation);
+                L.DomEvent.disableClickPropagation(this._container);
+                L.DomEvent.disableScrollPropagation(this._container);
             }
 
             this._filterInfo = L.DomUtil.create('span', 'filter-info-box', this._easyButton._container);
