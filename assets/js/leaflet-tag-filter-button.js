@@ -369,7 +369,7 @@
             return this._container.style.display == 'block';
         },
 
-        filter: function() {
+        filter: function(withTags) {
             var checkboxContainer = (this._container.getElementsByTagName('div')[0]),
                 childCount = this._tagEl.childElementCount,
                 children = this._tagEl.children,
@@ -377,11 +377,25 @@
 
             this._selectedTags = [];
 
-            for (i = 0; i < childCount; i++) {
-                childCheckbox = children[i];
-                if (childCheckbox && childCheckbox.dataset.checked) {
-                    this._selectedTags.push(childCheckbox.dataset.value);
+            if (withTags) {
+                var acceptingTags = [];
+                for (i = 0; i < withTags.length; i++) {
+                    if (this.options.data.indexOf(withTags[i]) !== -1) {
+                        acceptingTags.push(withTags[i]);
+                    }
                 }
+                withTags = acceptingTags;
+            }
+
+            if (!withTags || !withTags.length) {
+                for (i = 0; i < childCount; i++) {
+                    childCheckbox = children[i];
+                    if (childCheckbox && childCheckbox.dataset.checked) {
+                        this._selectedTags.push(childCheckbox.dataset.value);
+                    }
+                }
+            } else {
+                this._selectedTags = withTags;
             }
 
             var filteredCount = this.layerSources.currentSource.hide.call(this, this.layerSources.currentSource);
@@ -396,7 +410,6 @@
             if (this._container && (this._container.style.display == "none" || this._container.style.display == "")) {
                 return;
             }
-            debugger;
             if (this._container) {
                 this._container.style.display = "none";
             }
@@ -426,7 +439,8 @@
                 L.DomEvent.disableClickPropagation(this._container);
                 L.DomEvent.disableScrollPropagation(this._container);
             } else {
-                L.DomEvent.on(this._container, 'click', L.DomEvent.stopPropagation);
+                L.DomEvent.disableClickPropagation(this._container);
+                L.DomEvent.disableScrollPropagation(this._container);
             }
 
             this._filterInfo = L.DomUtil.create('span', 'filter-info-box', this._easyButton._container);

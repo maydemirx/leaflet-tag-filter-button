@@ -94,7 +94,7 @@
     font-size: 12px; 
     font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
     color: hsl(180, 40%, 40%);
-    display: inline-block; 
+    display: inline; 
     padding: 5px 15px;
     text-decoration: none;
     cursor: pointer; 
@@ -137,4 +137,7 @@
 }
 .leaflet-bar .tag-filter-tags-container ::-webkit-scrollbar-thumb:hover {
     background:#7d7d7d;
+}
+.leaflet-bar .tag-filter-tags-container a, .leaflet-bar .tag-filter-tags-container .checkbox {
+    white-space: nowrap;
 }

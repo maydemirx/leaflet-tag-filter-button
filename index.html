@@ -22,7 +22,7 @@
 
     <link rel="stylesheet" href="assets/css/leaflet.css" />
     <link rel="stylesheet" href="assets/css/leaflet-easy-button.css" />
-    <link rel="stylesheet" href="assets/css/leaflet-tag-filter-button.css" />
+    <link rel="stylesheet" href="assets/css/leaflet-tag-filter-button.css?last" />
     <link rel="stylesheet" href="assets/css/ripple.min.css" />
     
     <!-- Theme CSS -->
@@ -58,7 +58,7 @@
             <div class="container">
                 <div id="doc-header" class="doc-header text-center">
                     <h1 class="doc-title"><i class="icon fa fa-filter"></i> Leaflet Tag Filter Button</h1>
-                    <div class="meta"><i class="fa fa-clock-o"></i> Last updated: Apr 5th, 2018</div>
+                    <div class="meta"><i class="fa fa-clock-o"></i> Last updated: Nov 21th, 2022</div>
 
                 </div><!--//doc-header-->
                 <div class="doc-body">
@@ -129,15 +129,13 @@
 &#x3C;script type=&#x22;text/javascript&#x22;&#x3E;
 
 $(function(argument) {
-&#x9;var map = L.map(&#x27;map&#x27;).setView([36.86, 30.75], 12);
-&#x9;L.tileLayer(&#x27;https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWF5ZGVtaXJ4IiwiYSI6ImNpbGIweWdmMDAwM3h2cWx6a2QxaTc5YmMifQ.dpkSDE4DYKn6in5ODl_pWg&#x27;, {
-&#x9;&#x9;&#x9;maxZoom: 18,
-&#x9;&#x9;&#x9;attribution: &#x27;Map data &#x26;copy; &#x3C;a href=&#x22;http://openstreetmap.org&#x22;&#x3E;OpenStreetMap&#x3C;/a&#x3E; contributors, &#x27; +
-&#x9;&#x9;&#x9;&#x9;&#x27;&#x3C;a href=&#x22;http://creativecommons.org/licenses/by-sa/2.0/&#x22;&#x3E;CC-BY-SA&#x3C;/a&#x3E;, &#x27; +
-&#x9;&#x9;&#x9;&#x9;&#x27;Imagery &#xA9; &#x3C;a href=&#x22;http://mapbox.com&#x22;&#x3E;Mapbox&#x3C;/a&#x3E;&#x27;,
-&#x9;&#x9;&#x9;id: &#x27;mapbox.streets&#x27;
-&#x9;&#x9;}).addTo(map);
-
+    &#x9;var osmUrl = &#x27;http://{s}.tile.osm.org/{z}/{x}/{y}.png&#x27;,
+        osmAttrib = &#x27;&#x26;copy; &#x3C;a href=&#x22;http://openstreetmap.org/copyright&#x22;&#x3E;OpenStreetMap&#x3C;/a&#x3E; contributors&#x27;,
+        osm = L.tileLayer(osmUrl, {
+            maxZoom: 18,
+            attribution: osmAttrib
+        });
+&#x9;var map = L.map(&#x27;map&#x27;).setView([36.86, 30.75], 12).addLayer(osm);
 
 &#x9;var fastMarker = L.marker([36.8963965256, 30.7087719440], { tags: [&#x27;fast&#x27;] }).addTo(map).bindPopup(&#x27;fast&#x27;); 
 &#x9;var slowMarker = L.marker([36.8967740487, 30.7107782364], { tags: [&#x27;slow&#x27;] }).addTo(map).bindPopup(&#x27;slow&#x27;);
@@ -342,10 +340,10 @@ $(function(argument) {
     <script type="text/javascript" src="assets/plugins/prism/prism.js"></script>    
     <script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>                                                                
     <script type="text/javascript" src="assets/plugins/jquery-match-height/jquery.matchHeight-min.js"></script>
-    <script type="text/javascript" src="assets/js/main.js"></script>
+    <script type="text/javascript" src="assets/js/main.js?last"></script>
     <script type="text/javascript" src="assets/js/leaflet.js"></script>
     <script type="text/javascript" src="assets/js/leaflet-easy-button.js"></script>
-    <script type="text/javascript" src="assets/js/leaflet-tag-filter-button.js"></script>
+    <script type="text/javascript" src="assets/js/leaflet-tag-filter-button.js?last"></script>
 
 
     
